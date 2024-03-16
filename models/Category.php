@@ -73,6 +73,7 @@
 
             if($statement->execute())
             {
+                $this->id = $this->connection->lastInsertId();
                 return true;
             }
 
