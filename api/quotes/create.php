@@ -13,7 +13,7 @@
     $quote = new Quote($database_connection);
     $requestBody = json_decode(file_get_contents("php://input"));
 
-    function isMissingRequirement($requestBody)
+    function isMissingRequirements($requestBody)
     {
         return !(isset($requestBody->quote) && isset($requestBody->author_id) && isset($requestBody->category_id));
     }
