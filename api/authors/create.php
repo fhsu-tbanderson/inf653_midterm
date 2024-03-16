@@ -49,7 +49,7 @@
     
         if ($author->create()) 
         {
-            messageCreateSucess();
+            messageCreateSucess($author);
         } 
         else 
         {
