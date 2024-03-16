@@ -44,10 +44,14 @@
 
     }
 
-    function messageQuoteUpdateSuccess()
+    function messageQuoteUpdateSuccess($inputQuote)
     {
         echo json_encode(
-            array('message' => "The quote has been updated" )
+            array("id" =>$inputQuote->id,
+                "quote" => $inputQuote->quote, 
+                "author_id" => $inputQuote->author_id,
+                "category_id" => $inputQuote->category_id
+            )
         );
 
     }
@@ -91,7 +95,7 @@
 
         if($quote->update())
         {
-            messageQuoteUpdateSuccess();
+            messageQuoteUpdateSuccess($inputQuote);
         }
         else
         {

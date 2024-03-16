@@ -22,10 +22,11 @@
     }
 
 
-    function messageUpdateSuccess()
+    function messageUpdateSuccess($inputCategory)
     {
         echo json_encode(
-            array('message' => 'The category has been updated')
+            array("id" =>$inputCategory->id, 
+                "category" => $inputCategory->category)
         );
     }
 
@@ -70,7 +71,7 @@
 
         if($category->update())
         {
-            messageUpdateSuccess();
+            messageUpdateSuccess($inputCategory);
         }
         else
         {

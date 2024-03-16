@@ -22,10 +22,11 @@
     }
 
 
-    function messageUpdateSuccess()
+    function messageUpdateSuccess($inputAuthor)
     {
         echo json_encode(
-            array('message' => 'The author has been updated')
+            array("id" =>$inputAuthor->id, 
+                "author" => $inputAuthor->author)
         );
     }
 
@@ -70,7 +71,7 @@
 
         if($author->update())
         {
-            messageUpdateSuccess();
+            messageUpdateSuccess($inputAuthor);
         }
         else
         {
