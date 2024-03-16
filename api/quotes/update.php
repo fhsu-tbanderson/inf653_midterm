@@ -36,12 +36,14 @@
 
     }
 
-    function messageForeignKeyConstraintNotMet()
+    function messageForeignKeyConstraintNotMetAuthorId()
     {
-        echo json_encode(
-            array('message' => "Foreign Key constraint not met" )
-        );
+        echo json_encode(array('message' => 'author_id Not Found'));
+    }
 
+    function messageForeignKeyConstraintNotMetCategoryId()
+    {
+        echo json_encode(array('message' => 'category_id Not Found'));
     }
 
     function messageQuoteUpdateSuccess($inputQuote)
@@ -81,11 +83,16 @@
             return;
         }
 
-        if(!$quote->isUpdateForeignKeyConstraintMet($requestBody->author_id, $requestBody->category_id))
+        if(!$quote->isUpdateForeignKeyConstraintMetAuthorId($quote->author_id))
         {
-            messageForeignKeyConstraintNotMet();
+            messageForeignKeyConstraintNotMetAuthorId();
             return;
+        }
 
+        if(!$quote->isUpdateForeignKeyConstraintMetCategoryId($quote->category_id))
+        {
+            messageForeignKeyConstraintNotMetCategoryId();
+            return;
         }
 
         $quote->id = $requestBody->id;
