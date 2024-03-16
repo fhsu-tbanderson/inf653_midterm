@@ -63,13 +63,13 @@
         $quote->author_id = $requestBody->author_id;
         $quote->category_id = $requestBody->category_id;
 
-        if(!isUpdateForeignKeyConstraintMetAuthorId($quote->author_id))
+        if(!$quote->isUpdateForeignKeyConstraintMetAuthorId($quote->author_id))
         {
             messageForeignKeyConstraintNotMetAuthorId();
             return;
         }
 
-        if(!isUpdateForeignKeyConstraintMetCategoryId($quote->category_id))
+        if(!quote->isUpdateForeignKeyConstraintMetCategoryId($quote->category_id))
         {
             messageForeignKeyConstraintNotMetCategoryId();
             return;
