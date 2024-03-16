@@ -25,9 +25,12 @@
     }
 
     
-    function messageCreateSucess()
+    function messageCreateSucess($inputCategory)
     {
-        echo json_encode(array('message' => 'The category has been created'));
+        echo json_encode(
+            array("id" =>$inputCategory->id, 
+                "category" => $inputCategory->category)
+        );
     }
 
     function messageCreateFailure()
@@ -48,7 +51,7 @@
     
         if ($category->create()) 
         {
-            messageCreateSucess();
+            messageCreateSucess($category);
         } 
         else 
         {

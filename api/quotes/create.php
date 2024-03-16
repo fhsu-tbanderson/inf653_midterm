@@ -23,9 +23,14 @@
         echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
-    function messageQuoteCreatedSuccess()
+    function messageCreateSucess($inputQuote)
     {
-        echo json_encode(array('message' => 'The quote has been created'));
+        echo json_encode(
+            array("id" =>$inputQuote->id,
+                "quote" => $inputQuote->quote, 
+                "author_id" => $inputQuote->author_id),
+                "category_id" => $inputQuote->category_id
+        );
     }
 
     function messageQuoteCreatedFail()
@@ -71,7 +76,7 @@
 
         if($quote->create())
         {
-            messageQuoteCreatedSuccess();
+            messageQuoteCreatedSuccess($quote);
         }
         else
         {
