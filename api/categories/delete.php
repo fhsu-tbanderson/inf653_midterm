@@ -31,9 +31,13 @@
         echo json_encode(array('message' => 'category_id Not Found'));
     }
     
-    function messageDeleteSucess()
+    function messageDeleteSucess($inputCategory)
     {
-        echo json_encode(array('message' => 'The category has been deleted'));
+        echo json_encode(
+            array(
+                'id' => $inputCategory->id
+                )
+            );
     }
 
     function messageDeleteFailure()
@@ -60,7 +64,7 @@
 
         if($category->delete())
         {
-            messageDeleteSucess();
+            messageDeleteSucess($category);
         }
         else
         {

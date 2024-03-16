@@ -31,9 +31,13 @@
         echo json_encode(array('message' => 'author_id Not Found'));
     }
     
-    function messageDeleteSucess()
+    function messageDeleteSucess($inputAuthor)
     {
-        echo json_encode(array('message' => 'The author has been deleted'));
+        echo json_encode(
+            array(
+            'id' => $inputAuthor->id
+            )
+        );
     }
 
     function messageDeleteFailure()
@@ -60,7 +64,7 @@
 
         if($author->delete())
         {
-            messageDeleteSucess();
+            messageDeleteSucess($author);
         }
         else
         {

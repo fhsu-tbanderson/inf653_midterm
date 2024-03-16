@@ -32,9 +32,13 @@
         echo json_encode(array('message' => 'No Quotes Found'));
     }
     
-    function messageDeleteSucess()
+    function messageDeleteSucess($inputQuote)
     {
-        echo json_encode(array('message' => 'The quote has been deleted'));
+        echo json_encode(
+            array(
+                'id' => $inputQuote->id
+        )
+    );
     }
 
     function messageDeleteFailure()
@@ -61,7 +65,7 @@
 
         if($quote->delete())
         {
-            messageDeleteSucess();
+            messageDeleteSucess($quote);
         }
         else
         {
