@@ -25,9 +25,9 @@
     }
 
     
-    function messageCreateSucess($author)
+    function messageCreateSucess($inputAuthor)
     {
-        echo json_encode(`created author ({$author->id}, {$author->author})`
+        echo json_encode(`created author ({$inputAuthor->id}, {$inputAuthor->author})`
         );
     }
 
