@@ -27,9 +27,7 @@
     
     function messageCreateSucess($author)
     {
-        echo json_encode(
-            array('id' => $author->id,
-                'author' => $author->author)
+        echo json_encode(`created author ({$author->id}, {$author->author})`
         );
     }
 
