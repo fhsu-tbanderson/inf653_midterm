@@ -83,6 +83,12 @@
             return;
         }
 
+       
+        $quote->id = $requestBody->id;
+        $quote->quote = $requestBody->quote;
+        $quote->author_id = $requestBody->author_id;
+        $quote->category_id = $requestBody->category_id;
+
         if(!$quote->isUpdateForeignKeyConstraintMetAuthorId($quote->author_id))
         {
             messageForeignKeyConstraintNotMetAuthorId();
@@ -95,10 +101,6 @@
             return;
         }
 
-        $quote->id = $requestBody->id;
-        $quote->quote = $requestBody->quote;
-        $quote->author_id = $requestBody->author_id;
-        $quote->category_id = $requestBody->category_id;
 
         if($quote->update())
         {
