@@ -28,8 +28,9 @@
         echo json_encode(
             array("id" =>$inputQuote->id,
                 "quote" => $inputQuote->quote, 
-                "author_id" => $inputQuote->author_id),
+                "author_id" => $inputQuote->author_id,
                 "category_id" => $inputQuote->category_id
+            )
         );
     }
 
