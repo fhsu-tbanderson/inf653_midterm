@@ -1,5 +1,5 @@
 SetEnv USERNAME "super_user"
 SetEnv PASSWORD "0WB0WRJIZuFV4auEXW79s7HURncVt1QO"
-SetEnv DATABASE_NAME "quotesdb_65zu"
-SetEnv HOST "dpg-cni994mn7f5s73cmk06g-a.oregon-postgres.render.com"
-SetEnv PORT "5432"
+SetEnv DB_NAME "quotesdb_65zu"
+SetEnv DB_HOST "dpg-cni994mn7f5s73cmk06g-a.oregon-postgres.render.com"
+SetEnv DB_PORT "5432"

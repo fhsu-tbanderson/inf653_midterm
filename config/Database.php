@@ -12,9 +12,9 @@
         {
             $this->username = getenv('USERNAME');
             $this->password = getenv('PASSWORD');
-            $this->database_name = getenv('DATABASE_NAME');
-            $this->host = getenv('HOST');
-            $this->port = getenv('PORT');
+            $this->database_name = getenv('DB_NAME');
+            $this->host = getenv('DB_HOST');
+            $this->port = getenv('DB_PORT');
 
         }
 
