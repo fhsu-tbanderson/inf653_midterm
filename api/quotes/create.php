@@ -69,7 +69,7 @@
             return;
         }
 
-        if(!quote->isUpdateForeignKeyConstraintMetCategoryId($quote->category_id))
+        if(!$quote->isUpdateForeignKeyConstraintMetCategoryId($quote->category_id))
         {
             messageForeignKeyConstraintNotMetCategoryId();
             return;
