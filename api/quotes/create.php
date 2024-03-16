@@ -34,7 +34,7 @@
         );
     }
 
-    function messageQuoteCreatedFail()
+    function messageQuoteCreateFail()
     {
         echo json_encode(array('message' => 'The quote has not been created'));
     }
@@ -77,11 +77,11 @@
 
         if($quote->create())
         {
-            messageQuoteCreatedSuccess($quote);
+            messageCreateSucess($quote);
         }
         else
         {
-            messageQuoteCreatedFail();
+            messageQuoteCreateFail();
         }
 
 
