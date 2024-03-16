@@ -25,9 +25,12 @@
     }
 
     
-    function messageCreateSucess()
+    function messageCreateSucess($author)
     {
-        echo json_encode(array('message' => 'The author has been created'));
+        echo json_encode(
+            array('id' => $author->id,
+                'author' => $author->author)
+        );
     }
 
     function messageCreateFailure()
