@@ -95,7 +95,7 @@
 
         if($quote->update())
         {
-            messageQuoteUpdateSuccess($inputQuote);
+            messageQuoteUpdateSuccess($quote);
         }
         else
         {

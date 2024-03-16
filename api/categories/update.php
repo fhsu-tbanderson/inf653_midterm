@@ -71,7 +71,7 @@
 
         if($category->update())
         {
-            messageUpdateSuccess($inputCategory);
+            messageUpdateSuccess($category);
         }
         else
         {

@@ -71,7 +71,7 @@
 
         if($author->update())
         {
-            messageUpdateSuccess($inputAuthor);
+            messageUpdateSuccess($author);
         }
         else
         {
